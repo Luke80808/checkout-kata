@@ -8,8 +8,15 @@ namespace checkout_kata.tests
         }
 
         [Test]
-        public void Test1()
+        public void EmptyBasket_Returns0()
         {
+            // Arrange
+            // Act
+            Checkout sut = new Checkout(new List<PricingRule>());
+
+            // Assert
+
+
             Assert.Pass();
         }
     }
