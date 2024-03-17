@@ -107,5 +107,31 @@ namespace checkout_kata.tests
             // Assert
             Assert.That(total, Is.EqualTo(80));
         }
+
+        [Test]
+        public void Basket_Calculates_MultipleRules_MultipleProducts_OnlyOneRuleApplied()
+        {
+            // Arrange
+            var rules = new List<PricingRule>()
+            {
+                new PricingRule("A", 1, 50),
+                new PricingRule("A", 3, 130),
+                new PricingRule("B", 1, 30),
+                new PricingRule("B", 2, 45)
+            };
+            var checkout = new Checkout(rules);
+
+            // Act
+            checkout.Scan("A");
+            checkout.Scan("A");
+            checkout.Scan("A");
+            checkout.Scan("B");
+            checkout.Scan("B");
+
+            var total = checkout.GetTotalPrice();
+
+            // Assert
+            Assert.That(total, Is.EqualTo(175));
+        }
     }
 }
