@@ -1,5 +1,4 @@
-﻿
-namespace checkout_kata.Classes;
+﻿namespace checkout_kata.Classes;
 
 public class PricingRule(string item, int count, decimal price)
 {
