@@ -43,7 +43,7 @@ namespace checkout_kata.tests
         }
 
         [Test]
-        public void Basket_Calculates_MultipleRules_SameProduct_OneRuleApplied()
+        public void MultipleRules_SameProduct_OneRuleApplied()
         {
             // Arrange
             var rules = new List<PricingRule>()
@@ -65,7 +65,7 @@ namespace checkout_kata.tests
         }
 
         [Test]
-        public void Basket_Calculates_TwoRules_SameProduct_BothRulesApplied()
+        public void TwoRules_SameProduct_BothRulesApplied()
         {
             // Arrange
             var rules = new List<PricingRule>()
@@ -88,7 +88,7 @@ namespace checkout_kata.tests
         }
 
         [Test]
-        public void Basket_Calculates_SingleRules_MultipleProducts()
+        public void SingleRule_MultipleProducts()
         {
             // Arrange
             var rules = new List<PricingRule>()
@@ -109,7 +109,7 @@ namespace checkout_kata.tests
         }
 
         [Test]
-        public void Basket_Calculates_MultipleRules_MultipleProducts_OnlyOneRuleApplied()
+        public void MultipleRules_MultipleProducts_OnlyOneRuleApplied()
         {
             // Arrange
             var rules = new List<PricingRule>()
@@ -135,7 +135,7 @@ namespace checkout_kata.tests
         }
 
         [Test]
-        public void Basket_Calculates_MultipleRules_MultipleProducts_MultipleRulesApplied()
+        public void MultipleRules_MultipleProducts_MultipleRulesApplied()
         {
             // Arrange
             var rules = new List<PricingRule>()
