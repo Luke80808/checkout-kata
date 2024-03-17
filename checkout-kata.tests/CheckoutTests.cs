@@ -22,5 +22,23 @@ namespace checkout_kata.tests
             // Assert
             Assert.That(total, Is.EqualTo(0));
         }
+
+        [Test]
+        public void Basket_Calculates_SingleRule()
+        {
+            // Arrange
+            var rules = new List<PricingRule>()
+            {
+                new PricingRule("A", 1, 50)
+            };
+            var checkout = new Checkout(rules);
+
+            // act
+            checkout.Scan("A");
+
+            var total = checkout.GetTotalPrice();
+
+            Assert.That(total, Is.EqualTo(50));
+        }
     }
 }
