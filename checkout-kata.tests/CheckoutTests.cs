@@ -1,3 +1,6 @@
+using checkout_kata.Classes;
+using checkout_kata.Implementation;
+
 namespace checkout_kata.tests
 {
     public class Tests
@@ -11,13 +14,13 @@ namespace checkout_kata.tests
         public void EmptyBasket_Returns0()
         {
             // Arrange
+            var checkout = new Checkout(new List<PricingRule>());
+
             // Act
-            Checkout sut = new Checkout(new List<PricingRule>());
+            var total = checkout.GetTotalPrice();
 
             // Assert
-
-
-            Assert.Pass();
+            Assert.That(total, Is.EqualTo(0));
         }
     }
 }
